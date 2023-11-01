@@ -1,0 +1,691 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-family: 'Jacques Francois', serif;
+}
+
+/*Navigation*/
+.navbar {
+    background-color: #2D1919;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    font-family: 'Mooli', sans-serif;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 100px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.shop-name {
+    font-size: 50px;
+    font-family: 'Ingrid Darling', cursive;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.nav a {
+    position: relative;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 25px;
+    display: inline-block;
+    transition: 0.5s;
+}
+
+.nav a::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: white;
+    transition: width 0.3s ease;
+}
+
+.nav a:hover::before {
+    width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+    .nav {
+        flex-direction: row;
+        position: static;
+        top: auto;
+        left: auto;
+        background-color: transparent;
+        z-index: auto;
+    }
+
+    .shop-name{
+        font-size: 15px;
+        padding: 5px;
+    }
+
+    .logo img {
+        width: 70px;
+    }
+
+    .nav a {
+        display: block;
+        padding: 10px 20px;
+        width: 100%;
+        box-sizing: border-box;
+        text-align: left;
+        font-size: 10px;
+        padding: 5px;
+    }
+
+    .nav .contact-button {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+/*Header*/
+.header {
+    background-color: #f8f8f8;
+    padding: 20px;
+}
+
+.header {
+    background-image: url('./image/home.png');
+    background-size: cover;
+    background-position: center;
+    padding: 20px;
+    color: #260000;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap-reverse;
+    margin: 5px 30px;
+}
+
+.col-md-6 {
+    flex: 1;
+    padding: 20px;
+}
+
+.hero-name {
+    font-size: 80px;
+    font-weight: lighter;
+    margin-bottom: 10px;
+}
+
+.hero-desc {
+    font-size: 35px;
+    font-weight: bold;
+    line-height: 1.8;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.explore-button {
+    background-color: #260000;
+    color: #fff;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 50px;
+    font-size: 30px;
+    font-family: 'Jacques Francois', serif;    
+    cursor: pointer;
+    margin-left: 40px;
+    margin-top: 20px;
+    transition: 0.3s;
+}
+
+.explore-button:hover {
+    background-color: transparent;
+    color: #260000;
+    border: 1px solid #260000;
+}
+
+.explore-button a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.explore-button a:hover {
+    color: #260000;
+}
+
+.hero-img {
+    max-width: 100%;
+    height: auto;
+}
+
+@media (max-width: 768px) {
+    .row {
+        flex-direction: column-reverse;
+    }
+
+    .col-md-6 {
+        width: 100%;
+    }
+
+    .hero-name,
+    .hero-desc {
+        text-align: center;
+    }
+
+    .explore-button {
+        padding: 5px 10px;
+        font-size: 20px;
+        text-align: center;
+    }
+}
+
+/*About*/
+.about {
+    background-image: url('./image/story-bg-img.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 20px;
+    text-align: center;
+}
+
+.about-title {
+    font-size: 45px;
+    margin-bottom: 20px;
+}
+
+.about-para {
+    margin: 30px auto;
+    max-width: 800px; 
+    font-size: 25px;
+    line-height: 1.4;
+    margin-bottom: 10px;
+    text-align: center;
+    background-color: rgba(228, 228, 216, 0.1);
+    backdrop-filter: blur(50px);
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.readmore-button {
+    background-color: #260000;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 50px;
+    font-size: 20px;
+    font-family: 'Jacques Francois', serif;
+    cursor: pointer;
+    margin-left: 40px;
+    margin-top: 20px;
+    transition: 0.3s;
+}
+
+.readmore-button:hover {
+    background-color: transparent;
+    color: #260000;
+    border: 1px solid #260000;
+}
+
+@media (max-width: 768px) {
+    .about {
+        background-size: auto;
+    }
+
+    .about-title {
+        font-size: 30px;
+    }
+
+    .about-para {
+        font-size: 15px;
+    }
+
+    .product .card img {
+        max-width: 70%;
+    }
+}
+
+/*Product*/
+.product {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
+}
+
+.card-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1000px;
+    margin-top: 20px;
+}
+
+.card {
+    background: radial-gradient(859px at 10% 20%, rgb(245, 220, 154) 0%, rgb(164, 78, 51) 90%);
+    flex-basis: calc(33.33% - 20px);
+    margin: 10px;
+    padding: 20px;
+    border: 1px solid #E9DDC7;
+    border-radius: 10px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.product-desc {
+    margin: 0 auto;
+    max-width: 800px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+}
+
+.buy-button {
+    background-color: #260000;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 50px;
+    font-size: 20px;
+    font-family: 'Jacques Francois', serif;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.buy-button:hover{
+    background-color: transparent;
+    color: #260000;
+    border: 1px solid #260000;
+}
+
+.view-button {
+    background-color: #260000;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    margin-top: 20px;
+    font-size: 20px;
+    font-family: 'Jacques Francois', serif;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.view-button:hover {
+    background-color: transparent;
+    color: #260000;
+    border: 1px solid #260000;
+}
+
+.product hr {
+    border-top: 1px dotted #260000;
+    width: 100%;
+    margin: 10px auto;
+    margin-bottom: 0;
+}
+
+.promotion {
+    background-image: url('./image/story-bg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 20px;
+    text-align: center;
+    margin-top: 0 auto;
+}
+
+.promotion-title {
+    font-size: 45px;
+    margin-bottom: 0;
+    margin-top: 5px;
+}
+
+.promotion-subtitle {
+    font-size: 35px;
+    margin-bottom: 15px;
+}
+
+.day-time {
+    background-color: #260000;
+    border: 2px solid #260000;
+    padding: 10px;
+    display: inline-block;
+    color: white;
+}
+
+.promotion-desc {
+    margin: 0 auto;
+    margin-bottom: 20px;
+    max-width: 800px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.email-form {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.email-input {
+    flex: 1;
+    padding: 15px 20px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 50px;
+    outline: none;
+}
+
+.submit-button {
+    padding: 15px 20px;
+    font-size: 16px;
+    background-color: #260000;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: 0.3s;
+}
+
+.submit-button:hover {
+    background-color: #fff;
+    color: #260000;
+    border: 1px solid #260000;
+}
+
+.submit-button a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.submit-button a:hover {
+    color: #260000;
+}
+
+@media (max-width: 768px) {
+    .card {
+        flex-basis: 100%;
+        margin: 0;
+        padding: 10px;
+    }
+
+    .card-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .buy-button,
+    .view-button {
+        padding: 5px 10px;
+        font-size: 15px;
+    }
+
+    .promotion-title {
+        font-size: 25px;
+        margin-bottom: 10px;
+    }
+
+    .promotion-subtitle {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    .day-time {
+        font-size: 15px;
+        margin-bottom: 10px;
+    }
+
+    .promotion-desc {
+        align-items: center;
+        font-size: 15px;
+        margin: 10px 15px;
+        margin-bottom: 10px;
+    }
+
+    .email-form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .email-input {
+        width: 100%;
+        max-width: 300px;
+        margin-bottom: 10px;
+    }
+
+    .submit-button {
+        width: 100%;
+        max-width: 300px;
+        margin-left: 0;
+    }
+}
+
+/*Testimonial*/
+.testimonial {
+    background-image: url('./image/testimonial-bg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.testimonial-title {
+    font-size: 45px;
+}
+
+.testimonial-container {
+    display: flex;
+    max-width: 1000px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-testimonial {
+    flex-basis: calc(33.33% - 20px);
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    transition: transform 0.2s;
+}
+
+.card-testimonial:hover {
+    transform: scale(1.1);
+}
+
+.card-testimonial-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.rating {
+    font-size: 24px;
+}
+
+.card-testimonial-paragraph {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #260000;
+}
+
+.name {
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.testimonial button{
+    margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+    .card-testimonial {
+        flex-basis: calc(100% - 20px);
+        margin: 0;
+        padding: 10px;
+    }
+
+    .testimonial-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .testimonial-title{
+        font-size: 30px;
+    }
+}
+
+/*Footer*/
+.footer {
+    background-color: #260000;
+    color: white;
+    padding: 40px 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.col {
+    flex: 1;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+.contact-info h3,
+.follow h3 {
+    font-size: 30px;
+    margin-bottom: 20px;
+    text-decoration: underline;
+}
+
+.contact-info i {
+    padding: 10px 10px;
+}
+
+.contact-info p,
+.social-icons a {
+    font-size: 20px;
+    margin: 5px 0;
+}
+
+.social-icons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.social-icons a {
+    font-size: 40px;
+    padding-right: 10px;
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+.contact-form h3 {
+    text-align: center;
+    font-size: 30px;
+    text-decoration: underline;
+    margin-bottom: 20px;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid white;
+    color: white;
+    margin-bottom: 20px;
+    padding: 15px 20px;
+    font-size: 20px;
+}
+
+.contact-form button {
+    background-color: white;
+    color: #260000;
+    border: none;
+    padding: 15px 20px;
+    font-size: 25px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 30px;
+}
+
+.contact-form button:hover {
+    background-color: #260000;
+    color: white;
+    border: 1px solid #fff;
+}
+
+.contact-form button a {
+    text-decoration: none;
+    color: #260000;
+}
+
+.contact-form button a:hover {
+    color: #fff;
+}
+
+.copyright{
+    text-align: center;
+    margin: 0 auto;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+@media screen and (max-width: 768px) {
+    .col {
+        flex-basis: 100%;
+        margin-right: 0;
+    }
+}
